@@ -110,47 +110,6 @@ a {
 
 /* Header starts */
 
-.header-in {
-    display: flex;
-    width: 1158px;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header-logo-nav {
-    display: flex;
-}
-
-.header-list {
-    display: flex;
-    gap: 40px;
-}
-
-.header-contact-link.active {
-    color: #404BBF;
-    position: relative;
-}
-
-.header-contact-link.active::after {
-    content: "";
-    position: absolute;
-    bottom: -1px;
-    display: block;
-    width: 100%;
-    height: 4px;
-    border-radius: 2px;
-    background: var(--OCEAN, #404BBF);
-}
-
-.address-list {
-    display: flex;
-    gap: 40px;
-}
-
-.header-in .container {
-    border-bottom: 1px solid var(--CORNFLOWER, #E7E9FC);
-}
-
 header {
     background: #FFF;
     color: #4d5ae5;
@@ -162,7 +121,19 @@ header {
     box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 
+.header-in .container {
+    border-bottom: 1px solid var(--CORNFLOWER, #E7E9FC);
+}
+
+.header-in {
+    display: flex;
+    width: 1158px;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .header-logo-nav {
+    display: flex;
     align-items: center;
 }
 
@@ -185,6 +156,17 @@ header {
     color: #2e2f42;
 }
 
+.header-list {
+    display: flex;
+    gap: 40px;
+}
+
+@media only screen and (max-width: 767.98px) {
+.header-list {
+    display: none;
+  }
+}
+
 .header-contact-link {
     color: #2E2F42;
     font-weight: 500;
@@ -200,6 +182,40 @@ header {
     color: #404bbf;
 }
 
+.header-contact-link.active {
+    color: #404BBF;
+    position: relative;
+}
+
+.header-contact-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: #404BBF;
+}
+
+.address-info {
+    font-style: normal;
+    padding: 24px 0;
+    gap: 40px;
+}
+
+@media only screen and (max-width: 767.98px) {
+    .address-info {
+        display: none;
+  }
+}
+
+.address-list {
+    display: flex;
+    gap: 40px;
+    margin-right: auto;
+}
+
 .address-link {
     color: #434455;
     letter-spacing: 0.02em;
@@ -208,14 +224,7 @@ header {
 
 .address-link:hover,
 .address-link:focus {
-
     color: #404bbf;
-}
-
-.address-info {
-    font-style: normal;
-    padding: 24px 0;
-    gap: 40px;
 }
 
 /* Main section */
@@ -1061,9 +1070,128 @@ textarea {
     margin: auto;
 }
 
-/*
+/* Mobile menu */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    padding: 72px 16px 40px;
+
+    transform: translateX(-100%);
+}
+
+.menu.is-open {
+    transform: translateX(0);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-btn {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%)
+    top: 24px;
+    right: 24px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+
+    margin-left: auto;
+    transition-property: background-color;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    background-color: #FFFFFF;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+.menu-btn-icon {
+  
+}
+.menu-nav {
+    margin-bottom: auto;
+
+}
+.menu-nav-item:not(:last-child) {
+    margin-bottom: 40px;
+}
+.menu-nav-link {
+    color: #2E2F42;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+}
+
+.menu-nav-link:focus {
+    color: #404BBF;
+}
+.menu-nav-address-info {
+
+}
+.menu-nav-address-list {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.menu-nav-address-link {
+    color: #434455;
+    font-style: normal;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+}
+.menu-nav-address-link:focus {
+    color: #404BBF;
+}
+
+.socials {
+    display: flex;
+    gap: 40px;
+
+}
+.socials-item {
+    width: 40px;
+    height: 40px;
+}
+.socials-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: #4D5AE5;
+}
+.socials-icon {
+    fill: #F4F4FD;
+    width: 24px;
+    height: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
