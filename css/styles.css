@@ -112,6 +112,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* max-width: 320px; */
 }
 
 @media only screen and (min-width: 768px) {
@@ -254,7 +255,7 @@ a {
   }
   .address-list li:first-child {
     margin-bottom: 0;
-}
+  }
 }
 
 .address-link {
@@ -281,10 +282,6 @@ a {
     padding: 24px 0;
     font-size: 16px;
    }
-    /* .address-list-link {
-        font-size: 16px;
-        padding: 0;
-    } */
 }
 
 .address-link:hover,
@@ -307,35 +304,63 @@ a {
   }
 }
 
-
-
-
 /* Main section */
 
 .main-section {
     background-color: #2e2f42;
     flex-shrink: 0;
-    padding: 188px 0;
     margin: 0 auto;
     background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
     background-position: center;
     background-size: cover;
-    max-width: 1440px;
+    /* max-width: 320px; */
     background-repeat: no-repeat;
 }
 
+.hero-container .container {
+    padding: 72px 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-container .container {
+    padding: 112px 10;
+    }
+}
+
+@media only screen and (min-width: 1158px) {
+   .hero-container .container {
+    padding: 188px 0;
+  }
+}
+
 .main-motto {
-    color: #FFFFFF;
-    background: none;
-    line-height: 1.07;
-    font-size: 56px;
+    color: #FFF;
     text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.11;
     letter-spacing: 0.02em;
-    max-width: 496px;
-    margin-bottom: 48px;
+    text-transform: capitalize;
+    max-width: 288px;
+    margin-bottom: 72px;
     margin-left: auto;
     margin-right: auto;
 }
+
+@media only screen and (min-width: 768px) {
+   .main-motto {
+    max-width: 496px;
+    white-space: normal;
+    margin-bottom: 36px;
+    font-size: 56px;
+    line-height: 1.07;
+    letter-spacing: 0.02em;
+  }
+  .main-motto br {
+    display: none;
+  }
+}
+
 
 .main-button {
     background-color: #4D5AE5;
@@ -347,14 +372,10 @@ a {
     letter-spacing: 0.04em;
     cursor: pointer;
     padding: 16px 32px;
-    /* margin-left: auto;
-    margin-right: auto; */
     margin: 0 auto;
     display: block;
-    padding: 16px 32px;
     gap: 10px;
     border-radius: 4px;
-    background: var(--IRIS, #4D5AE5);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     min-width: 169px;
     height: 56px;
@@ -731,7 +752,7 @@ a {
 
 .footer {
     background-color: #2E2F42;
-    padding: 100px 0;
+    /* padding: 100px 0; */
 }
 
 .footer-logo {
