@@ -336,6 +336,7 @@ a {
 
 @media only screen and (min-width: 1158px) {
     .main-section {
+        max-width: 1440px;
         padding-top: 188px;
         padding-bottom: 188px;
         background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
@@ -445,7 +446,6 @@ a {
         flex-basis: auto;
         text-align: left;
         width: calc((100% - 72px) / 4);
-        padding-bottom: 8px;
     }
 }
 
